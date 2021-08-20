@@ -114,6 +114,21 @@
 
       // 7. sort Exercise
       // Sort the people alphabetically by last name
+      const sortedArrayToObject = people.map((person) => {
+        const [last, first] = person.split(", ");
+        const newName = {
+          lastName: last,
+          firstName: first,
+        };
+        return newName;
+      });
+      const sortedNameArray = sortedArrayToObject.sort((a, b) =>
+        a.lastName > b.lastName ? 1 : -1
+      );
+      const rejoinedArray = sortedNameArray.map(
+        (name) => `${name.lastName}, ${name.firstName}`
+      );
+      console.log(rejoinedArray);
 
       // 8. Reduce Exercise
       // Sum up the instances of each of these
